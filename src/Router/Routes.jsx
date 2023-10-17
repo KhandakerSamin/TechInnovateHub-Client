@@ -9,6 +9,7 @@ import MyCart from "../Pages/MyCart";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
 import PrivateRoute from "./PrivateRoutes";
+import BrandDetails from "../Pages/BrandDetails";
 
   const router = createBrowserRouter([
     {
@@ -36,6 +37,11 @@ import PrivateRoute from "./PrivateRoutes";
         {
             path:'signUp',
             element:<SignUp></SignUp>
+        },
+        {
+            path:'/brandDetails/:brand',
+            element:<BrandDetails></BrandDetails>,
+            loader: ({ brand }) => fetch(`http://localhost:5000/products/${brand}`)
         }
       ]
     },

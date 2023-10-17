@@ -16,8 +16,8 @@ const AddProduct = () => {
 
         // const newBrand = {  brand, photo }
         const newProduct = { name, brand, category: type, description, price,  rating, photo }
-
-        fetch('http://localhost:5000/brand', {
+        console.log(newProduct);
+        fetch(`http://localhost:5000/products`, {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newProduct)
@@ -31,10 +31,28 @@ const AddProduct = () => {
                         text: 'Coffee Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Confirm'
-                    })
+                    });
+                    // Uncomment the following line to reset the form
+                    // form.reset();
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'An error occurred while adding the product',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
                 }
-                form.reset();
             })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'An error occurred while adding the product',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        
     }
 
     return (
