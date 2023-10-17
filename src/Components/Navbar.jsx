@@ -22,7 +22,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-white">
+        <div className="navbar bg-white shadow-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -43,6 +43,20 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className='mr-10 flex justify-center items-center'>
+
+                    <div className='flex justify-center items-center'>
+                        {user && (
+                            <p className='font-semibold hidden md:block mr-3'>
+                                {user.displayName || "User"} {/* Use "User" as a fallback */}
+                            </p>
+                        )}
+                        {user ?
+                            <img className='rounded-full w-[35px] md:w-[40px] h-[35px] md:h-[40px] mr-5' src={user.photoURL} alt='' />
+                            :
+                            // <img className='w-10 h-10 rounded-full mr-4' src={img} alt="" />
+                            <></>
+                        }
+                    </div>
 
                     <div>
                         {

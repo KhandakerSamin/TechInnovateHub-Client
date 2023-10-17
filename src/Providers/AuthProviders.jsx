@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth" ;
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth" ;
 import auth from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -34,6 +34,12 @@ const AuthProviders = ({ children }) => {
         return signOut(auth);
     };
 
+    const updateimgName = (photo, name) =>{
+        return updateProfile(auth.currentUser ,{
+            displayName: name, photoURL: photo
+        })
+    } 
+
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log("User in the auth state changed", currentUser);
@@ -51,7 +57,8 @@ const AuthProviders = ({ children }) => {
         createUser,
         signInUser,
         signOutUser,
-        googleSingIn
+        googleSingIn,
+        updateimgName
     }
 
     return (

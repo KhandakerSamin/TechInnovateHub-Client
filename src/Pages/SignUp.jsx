@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
 
-    const { createUser, googleSingIn } = useContext(AuthContext);
+    const { createUser, googleSingIn,updateimgName } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -18,7 +18,9 @@ const SignUp = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        const name = form.name.value;
+        const photo = form.photo.value;
+        console.log(email, password, photo, name);
 
         // Password Validation  : 
         // // Check if the input has less than 6 characters
@@ -40,10 +42,19 @@ const SignUp = () => {
         createUser(email, password)
         .then(res => {
             console.log(res);
-            console.log("Signed in successfully");
-            // navigate after login 
-            navigate(location?.state ? location.state : '/')
-            swal("Signed in!", "You Signed in Successfully!", "success");
+            updateimgName(photo,name)
+            .then(res => {
+                console.log(res);
+                swal("Congratulations", "Sign Up Completed", "success");
+                navigate(location?.state? location.state: '/');
+            })
+            .catch(err => {
+                console.log(err);
+            })
+            // console.log("Signed in successfully");
+            // // navigate after login 
+            // navigate(location?.state ? location.state : '/')
+            // swal("Signed in!", "You Signed in Successfully!", "success");
         })
         .catch(err => {
             console.log(err);
