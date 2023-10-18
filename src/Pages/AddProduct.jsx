@@ -28,7 +28,7 @@ const AddProduct = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Added Successfully',
+                        text: 'Product Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Confirm'
                     });
@@ -93,6 +93,8 @@ const AddProduct = () => {
                                             <option>Phone</option>
                                             <option>Tablet</option>
                                             <option>Laptop</option>
+                                            <option>Camera</option>
+                                            <option>Headphone</option>
                                         </select>
                                     </div>
                                     <div className='w-1/2'>

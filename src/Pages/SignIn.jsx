@@ -22,7 +22,7 @@ const SignIn = () => {
         signInUser(email, password)
             .then(res => {
                 console.log(res);
-                console.log("Loged in successfully");
+                console.log("Sign in successfully");
                 // navigate after login 
                 navigate(location?.state ? location.state : '/')
                 swal("Signed in!", "You Signed in Successfully!", "success");

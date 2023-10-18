@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Providers/AuthProviders";
 
@@ -36,7 +36,7 @@ const ProductDetails = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Added Successfully',
+                        text: ' Added to Cart Successfully',
                         icon: 'success',
                         confirmButtonText: 'Confirm'
                     });
@@ -62,13 +62,23 @@ const ProductDetails = () => {
 
     return (
         <div>
-            <h1>Product details Of : {info.name} </h1>
-            <img src={info.photo} alt="" />
-            <p>Description : {info.description} </p>
-            {/* <Link to={`/cart/${info._id}`}>
-
-                </Link> */}
-            <button onClick={handleAddToCart} className="btn">Add to cart</button>
+            <h1 className="text-2xl text-center my-10 font-bold">Product details Of : {info.name} </h1>
+            <div className="flex w-full gap-20">
+                <div className="w-1/3">
+                    <img className="h-[350px]" src={info.photo} alt="" />
+                </div>
+                <div className="w-2/3">
+                    <h1 className="text-xl font-bold  mb-4 my-5">Name : {name}</h1>
+                    <h1 className="text-xl font-bold  mb-4 " >Brand : {brand}</h1>
+                    <h1 className="text-xl font-bold  mb-4 ">Price : {price}</h1>
+                    <h1 className="text-xl font-bold  mb-4 ">Category : {category}</h1>
+                    <h1 className="text-xl font-bold  mb-4 ">Rating : {rating}</h1>
+                    <p className="text-xl font-bold  mb-4 ">Description : {description} </p>
+                </div>
+            </div>
+            <Link className="flex justify-center my-14" to='/cart'>
+                <button onClick={handleAddToCart} className="btn btn-primary w-[300px]">Add to cart</button>
+            </Link>
         </div>
     );
 };

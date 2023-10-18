@@ -48,12 +48,12 @@ import UpdateProduct from "../Pages/UpdateProduct";
         },
         {
           path:'/productDetails/:id',
-          element:<ProductDetails></ProductDetails>,
+          element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
           loader: () => fetch('http://localhost:5000/products')
         },
         {
           path:'/updateProduct/:id',
-          element:<UpdateProduct></UpdateProduct>,
+          element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
           loader:({params}) => fetch(`http://localhost:5000/updateProduct/${params.id}`)
         }
       ]

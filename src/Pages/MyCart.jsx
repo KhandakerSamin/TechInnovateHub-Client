@@ -19,7 +19,7 @@ const MyCart = () => {
             <h1 className="text-2xl text-center mb-2 mt-7">{user.displayName}, your choosen porducts here :</h1>
             <h1 className="text-lg text-center mb-7">{user.email}</h1>
             <h1>My carts :{products.length} </h1>
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 ">
                 {
                     products.map( product => <CartCard key={product._id} product={product} setProducts={setProducts} products={products}></CartCard>)
                 }
