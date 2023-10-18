@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const AddProduct = () => {
 
-    const handleAddCoffee = e => {
+    const handleAddProduct = e => {
         e.preventDefault()
         const form = e.target;
         const name = form.name.value;
@@ -66,7 +66,7 @@ const AddProduct = () => {
                     <h1 className='text-4xl mt-12 mb-5 text-[#374151] text-center '>Add New Product</h1>
                     <div className='mx-14'>
                         <div className=''>
-                            <form onSubmit={handleAddCoffee} className='my-8'>
+                            <form onSubmit={handleAddProduct} className='my-8'>
                                 <div className='flex gap-x-10'>
                                     <div className='w-1/2'>
                                         <label className="label">
