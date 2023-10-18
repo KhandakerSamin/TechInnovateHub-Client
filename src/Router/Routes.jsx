@@ -30,7 +30,8 @@ import UpdateProduct from "../Pages/UpdateProduct";
         },
         {
             path:'/cart',
-            element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
+            element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
+            loader: () => fetch('http://localhost:5000/cartProducts')
         },
         {
             path:'/signIn',

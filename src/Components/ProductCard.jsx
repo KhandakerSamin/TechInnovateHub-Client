@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ singleProduct }) => {
-    
+
     console.log(singleProduct);
     return (
         <div className="card bg-red-50 w-[400px] h-[500px]">
@@ -16,15 +16,15 @@ const ProductCard = ({ singleProduct }) => {
                 <h1>Rating : {singleProduct.rating}</h1>
             </div>
             <div className="flex justify-between items-center">
-            <Link to={`/productDetails/${singleProduct._id}`}>
+                <Link to={`/productDetails/${singleProduct._id}`}>
                     <button className="btn">Details</button>
 
                 </Link>
-                <Link to={`/updateProduct/${singleProduct._id}`}>  
-                <button className="btn">Update </button>
-        
+                <Link to={`/updateProduct/${singleProduct._id}`}>
+                    <button className="btn">Update </button>
+
                 </Link>
-        </div>
+            </div>
         </div>
     );
 };
