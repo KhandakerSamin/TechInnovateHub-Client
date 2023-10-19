@@ -13,12 +13,12 @@ const CartCard = ({ product, setProducts, products }) => {
         // console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "This product will romove from the cart!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, Remove it!'
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`http://localhost:5000/cartProducts/${_id}`, {
@@ -29,8 +29,8 @@ const CartCard = ({ product, setProducts, products }) => {
                         console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'Removed from Cart!',
+                                'Your Product has been Removed.',
                                 'success'
                             )
                             const remaining = products.filter(item => item._id != _id);
@@ -43,18 +43,18 @@ const CartCard = ({ product, setProducts, products }) => {
 
     return (
         <div className="card ">
-            <div className="flex w-full rounded-t-xl bg-red-200 items-center">
-                <div className="w-1/3">
-                    <img className="w-[200px] rounded-l-xl rounded-b-none h-[150px]" src={photo} alt="" />
+            <div className="flex w-full rounded-t-xl bg-[#F0ECCF] items-center">
+                <div className="w-1/3 ">
+                    <img className="w-[300px] rounded-ss-xl h-[200px]" src={photo} alt="" />
                 </div>
-                <div className="w-2/3">
+                <div className="w-2/3 pl-10">
                     <h1 className="text-xl font-semibold mb-2">Name : {name}</h1>
                     <h1 className="text-xl font-semibold mb-2">Brand : {brand}</h1>
                     <h1 className="text-xl font-semibold mb-2">Price : {price} BDT</h1>
                     <h1 className="text-xl font-semibold mb-2">Category : {category}</h1>
                 </div>
             </div>
-            <button onClick={() => handleDelete(_id)} className="btn btn-primary rounded-none rounded-b-xl">Remove from the Cart</button>
+            <button onClick={() => handleDelete(_id)} className="btn btn-primary hover:bg-[#fab105] border-none bg-[#bb800a]   rounded-none normal-case  font-bold text-lg rounded-b-xl">Remove from the Cart</button>
         </div>
     );
 };

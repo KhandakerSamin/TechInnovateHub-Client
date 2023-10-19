@@ -61,24 +61,26 @@ const ProductDetails = () => {
     }
 
     return (
-        <div>
-            <h1 className="text-2xl text-center my-10 font-bold">Product details Of : {info.name} </h1>
-            <div className="flex w-full gap-20">
-                <div className="w-1/3">
-                    <img className="h-[350px]" src={info.photo} alt="" />
+        <div className="mb-24">
+            <h1 className="text-2xl text-[#FBC252] text-center py-5 mt-5 font-bold">Product details Of : {info.name} </h1>
+            <div className="card card-body m-10 bg-[#F0ECCF]">
+                <div className="flex flex-col md:flex-row w-full gap-20">
+                    <div className="w-full md:w-1/2 lg:w-1/3">
+                        <img className="h-[350px]" src={info.photo} alt="" />
+                    </div>
+                    <div className="w-full md:w-1/2 lg:2/3">
+                        <h1 className="text-xl font-bold  mb-4 my-5">Name : {name}</h1>
+                        <h1 className="text-xl font-bold  mb-4 " >Brand : {brand}</h1>
+                        <h1 className="text-xl font-bold  mb-4 ">Price : {price}</h1>
+                        <h1 className="text-xl font-bold  mb-4 ">Category : {category}</h1>
+                        <h1 className="text-xl font-bold  mb-4 ">Rating : {rating}</h1>
+                        <p className="text-xl font-bold  mb-4 ">Description : {description} </p>
+                    </div>
                 </div>
-                <div className="w-2/3">
-                    <h1 className="text-xl font-bold  mb-4 my-5">Name : {name}</h1>
-                    <h1 className="text-xl font-bold  mb-4 " >Brand : {brand}</h1>
-                    <h1 className="text-xl font-bold  mb-4 ">Price : {price}</h1>
-                    <h1 className="text-xl font-bold  mb-4 ">Category : {category}</h1>
-                    <h1 className="text-xl font-bold  mb-4 ">Rating : {rating}</h1>
-                    <p className="text-xl font-bold  mb-4 ">Description : {description} </p>
-                </div>
+                <Link className="flex justify-center py-10" to=''>
+                    <button onClick={handleAddToCart} className="btn bg-[#FBC252] border-none hover:bg-[#feb82a] text-black normal-case font-bold btn-primary w-[300px]">Add to cart</button>
+                </Link>
             </div>
-            <Link className="flex justify-center my-14" to='/cart'>
-                <button onClick={handleAddToCart} className="btn btn-primary w-[300px]">Add to cart</button>
-            </Link>
         </div>
     );
 };

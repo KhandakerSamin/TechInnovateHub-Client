@@ -57,7 +57,7 @@ const SignIn = () => {
             {/* <div className="mb-6 mt-6">
                 <Link to='/'><button className=' text-3xl'> Go to home</button></Link>
             </div> */}
-            <div className="card bg-gray-200 flex-shrink-0 rounded-lg w-full max-w-xl  mx-auto  my-20">
+            <div className="card bg-[#F0ECCF] flex-shrink-0 rounded-lg w-full max-w-xl  mx-auto  my-20">
                 <h1 className="text-center text-4xl font-semibold mt-12  text-black mx-16 pb-5">Sign In your account </h1>
                 <div className="card-body mx-8">
                     <form onSubmit={handleSignIn} >
@@ -75,15 +75,15 @@ const SignIn = () => {
                         </div>
 
                         <div className="form-control mt-6 w-full">
-                            <button className="btn border-none  bg-[#331A15] normal-case text-lg font-bold w-full text-white hover:text-black " type="submit">Sign In</button>
+                            <button className="btn border-none  bg-[#FFB100] normal-case text-lg font-bold w-full text-white hover:text-black " type="submit">Sign In</button>
                         </div>
                     </form>
-                    <button onClick={handleGoogleLogin} className="btn btn-outline normal-case text-lg font-bold bg-gray-200 w-full mt-2 mb-2 border-none text-black">
+                    <button onClick={handleGoogleLogin} className="btn btn-outline normal-case text-lg font-bold bg-gray-300 w-full mt-2 mb-2 border-none text-black">
                         <FcGoogle className="text-xl"></FcGoogle>
                         Continue with google
                     </button>
                     <div>
-                        <h1 className="font-semibold text-base text-black mt-2  text-center mb-8 ">Dont’t Have An Account ? Please <Link to='/signUp' className="text-[#562EFE]">Sign Up</Link></h1>
+                        <h1 className="font-semibold text-base text-black mt-2  text-center mb-8 ">Dont’t Have An Account ? Please <Link to='/signUp' className="text-[#FFB100]">Sign Up</Link></h1>
                     </div>
                 </div>
                 <div>

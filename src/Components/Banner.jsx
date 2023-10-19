@@ -1,16 +1,15 @@
-import bannerImg from '../assets/Images/iphone15banner.webp'
+import img2 from '../assets/Images/vecteezy_online-shopping-on-phone-buy-sell-business-digital-web_.jpg';
 
 const Banner = () => {
-    const bannerStyle = {
-        backgroundImage: `url(${bannerImg})`
-    }
-    return (
-        <div className='h-[650px] mx-24 mt-8 w-auto' style={bannerStyle}>
-            {/* <h1 className='text-7xl mb-8 pt-52 text-white text-center'>Would you like a Cup of Delicious Coffee?</h1>
-            <p className=' mb-5 px-10 font-serif text-xl text-white text-center '>Its coffee time - Sip & Savor - Relaxation in every sip! Get the nostalgia back!! Your companion of every moment!!! Enjoy the beautiful moments and make them memorable.</p>
-            <button className='bg-[#E3B577] text-white text-xl rounded-sm hover:bg-transparent hover:border py-2 px-4'>Learn More</button> */}
-        </div>
-    );
+  return (
+    <div className='h-[600px] w-full relative overflow-hidden'>
+      <img
+        className='h-full w-full'
+        src={img2}
+        alt='Banner'
+      />
+    </div>
+  );
 };
 
 export default Banner;

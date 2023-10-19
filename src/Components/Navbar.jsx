@@ -1,16 +1,16 @@
-import { useContext } from 'react';
 import logo from '../assets/Images/download__1_-removebg-preview.png'
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import swal from 'sweetalert';
+import { useContext } from 'react';
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
 
     const navLinks = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        {user && <li><NavLink to="/addProduct">Add Product</NavLink></li>}
-        {user && <li><NavLink to="/cart">My Cart</NavLink></li>}
+        <li className='text-lg font-bold'><NavLink to='/'>Home</NavLink></li>
+        {user && <li className='text-lg font-bold'><NavLink to="/addProduct">Add Product</NavLink></li>}
+        {user && <li className='text-lg font-bold'><NavLink to="/cart">My Cart</NavLink></li>}
     </>
 
     const handleSignOut = () => {
@@ -21,8 +21,9 @@ const Navbar = () => {
         console.log("signed OUt");
     }
 
+
     return (
-        <div className="navbar bg-white shadow-md">
+        <div className="navbar md:px-[25x] bg-[#A3BB98] shadow-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +34,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className=''>
-                    <img className='h-12 w-full' src={logo} alt="" />
+                    <img className='h-12 md:ml-10 w-full' src={logo} alt="" />
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -46,7 +47,7 @@ const Navbar = () => {
 
                     <div className='flex justify-center items-center'>
                         {user && (
-                            <p className='font-semibold hidden md:block mr-3'>
+                            <p className='font-semibold text-lg hidden md:block mr-3'>
                                 {user.displayName || "User"} {/* Use "User" as a fallback */}
                             </p>
                         )}
