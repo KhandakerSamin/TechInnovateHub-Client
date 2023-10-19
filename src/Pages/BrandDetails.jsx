@@ -51,10 +51,10 @@ const BrandDetails = () => {
         )
           :
           (
-            <div>
+            <div className=''>
               <p className='text-center mb-3 mt-6 font-serif'>TechInnovateHub</p>
               <h1 className='text-5xl mb-24 text-center'>Our Products For Your Choosen Brand</h1>
-              <div className='grid grid-cols-1 md:px-[70px] md:grid-cols-2 lg:grid-cols-3 gap-20 ml-3 md:ml-0 mr-5'>
+              <div className='grid grid-cols-1  md:grid-cols-1 md:px-[180px] lg:px-10 lg:grid-cols-3 gap-20 ml-3 md:ml-0 mr-5'>
                 {
                   products.map(singleProduct => <ProductCard key={singleProduct._id} singleProduct={singleProduct}></ProductCard>)
                 }

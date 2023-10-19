@@ -2,10 +2,20 @@ import logo from '../assets/Images/download__1_-removebg-preview.png'
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import swal from 'sweetalert';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
+    const [theme, setTheme] = useState("light");
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+    };
+
 
     const navLinks = <>
         <li className='text-lg font-bold'><NavLink to='/'>Home</NavLink></li>
@@ -36,6 +46,7 @@ const Navbar = () => {
                 <div className=''>
                     <img className='h-12 md:ml-10 w-full' src={logo} alt="" />
                 </div>
+                
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu gap-x-4 menu-horizontal px-1">
@@ -44,7 +55,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className='mr-10 flex justify-center items-center'>
-
+                <button onClick={toggleTheme} className="btn btn-sm mx-4 btn-accent normal-case">
+                    {theme === "light" ? <MdDarkMode className='text-lg'></MdDarkMode> : <MdLightMode className='text-lg'></MdLightMode> } 
+                </button>
                     <div className='flex justify-center items-center'>
                         {user && (
                             <p className='font-semibold text-lg hidden md:block mr-3'>
