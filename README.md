@@ -1,5 +1,5 @@
 # TechInnovateHub Technology and Electronics Selling Website
-![TechInnovateHub Logo]("./src/assets/Images/download.jpeg")
+![TechInnovateHub Logo]("https://i.postimg.cc/FKZvyFDC/download.jpg")
 
 Espresso Emporium is a web application for Selling Tecnology and Electronics Products. It is built using a variety of technologies to provide a seamless tecnology-related experience for both customers and administrators. Below, you'll find an overview of the main functionalities and features of the Espresso Emporium website.
 
