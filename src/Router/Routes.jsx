@@ -22,7 +22,7 @@ import UpdateProduct from "../Pages/UpdateProduct";
         {
             path:'/',
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/brands')
+            loader: () => fetch('https://tech-innovate-hub-server-38w6zw1rj.vercel.app/brands')
         },
         {
             path:'/addProduct',
@@ -31,7 +31,7 @@ import UpdateProduct from "../Pages/UpdateProduct";
         {
             path:'/cart',
             element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-            loader: () => fetch('http://localhost:5000/cartProducts')
+            loader: () => fetch('https://tech-innovate-hub-server-38w6zw1rj.vercel.app/cartProducts')
         },
         {
             path:'/signIn',
@@ -44,17 +44,17 @@ import UpdateProduct from "../Pages/UpdateProduct";
         {
             path:'/brandDetails/:brand',
             element:<BrandDetails></BrandDetails>,
-            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`)
+            loader: ({ params }) => fetch(`https://tech-innovate-hub-server-38w6zw1rj.vercel.app/products/${params.brand}`)
         },
         {
           path:'/productDetails/:id',
           element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/products')
+          loader: () => fetch('https://tech-innovate-hub-server-38w6zw1rj.vercel.app/products')
         },
         {
           path:'/updateProduct/:id',
           element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-          loader:({params}) => fetch(`http://localhost:5000/updateProduct/${params.id}`)
+          loader:({params}) => fetch(`https://tech-innovate-hub-server-38w6zw1rj.vercel.app/updateProduct/${params.id}`)
         }
       ]
     },

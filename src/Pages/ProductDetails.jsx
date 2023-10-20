@@ -25,7 +25,7 @@ const ProductDetails = () => {
         const userEmail = user.email;
         const newCartProduct = { name, brand, category, description, price, rating, photo, userName, userEmail }
         console.log(name, category, price, rating, brand);
-        fetch(`http://localhost:5000/cartProducts`, {
+        fetch(`https://tech-innovate-hub-server-38w6zw1rj.vercel.app/cartProducts`, {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newCartProduct)
