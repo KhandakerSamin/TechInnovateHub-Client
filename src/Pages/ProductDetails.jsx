@@ -10,8 +10,8 @@ const ProductDetails = () => {
     const { id } = useParams();
     const [info, setInfo] = useState({});
     const details = useLoaderData()
-    console.log(details);
-    console.log(info._id);
+    // console.log(details);
+    // console.log(info._id);
 
     useEffect(() => {
         const d = details?.find(item => item._id == id);
@@ -25,7 +25,7 @@ const ProductDetails = () => {
         const userEmail = user.email;
         const newCartProduct = { name, brand, category, description, price, rating, photo, userName, userEmail }
         console.log(name, category, price, rating, brand);
-        fetch(`https://tech-innovate-hub-server-38w6zw1rj.vercel.app/cartProducts`, {
+        fetch(`https://tech-innovate-hub-server-nn8n4wz00.vercel.app/cartProducts`, {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newCartProduct)

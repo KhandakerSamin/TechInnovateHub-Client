@@ -11,7 +11,7 @@ const BrandDetails = () => {
   const products = useLoaderData();
 
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <div className='mb-20'>

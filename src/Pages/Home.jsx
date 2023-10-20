@@ -7,7 +7,7 @@ import WhyChoose from "../Components/WhyChoose";
 const Home = () => {
 
     const brands = useLoaderData()
-    console.log(brands);
+    // console.log(brands);
 
     return (
         <div>

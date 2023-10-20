@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
@@ -16,8 +16,8 @@ const AddProduct = () => {
 
         // const newBrand = {  brand, photo }
         const newProduct = { name, brand, category: type, description, price,  rating, photo }
-        console.log(newProduct);
-        fetch(`https://tech-innovate-hub-server-38w6zw1rj.vercel.app/products`, {
+        // console.log(newProduct);
+        fetch(`https://tech-innovate-hub-server-nn8n4wz00.vercel.app/products`, {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newProduct)

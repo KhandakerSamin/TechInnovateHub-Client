@@ -17,7 +17,7 @@ const SignIn = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(res => {

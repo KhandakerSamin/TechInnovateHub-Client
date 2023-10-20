@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const UpdateProduct = () => {
 
     const product = useLoaderData();
-    console.log(product);
+    // console.log(product);
     const {name, brand , category,_id, description,price, rating, photo} = product;
     const handleUpdateProduct = e => {
 
@@ -21,9 +21,9 @@ const UpdateProduct = () => {
 
         // const newBrand = {  brand, photo }
         const updatedProduct = { name, brand, category: type, description, price,  rating, photo }
-        console.log(updatedProduct);
+        // console.log(updatedProduct);
         
-        fetch(`https://tech-innovate-hub-server-38w6zw1rj.vercel.app/updateProduct/${_id}`, {
+        fetch(`https://tech-innovate-hub-server-nn8n4wz00.vercel.app/updateProduct/${_id}`, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updatedProduct)

@@ -7,8 +7,8 @@ import { useContext, useState } from "react";
 const MyCart = () => {
 
     const { user } = useContext(AuthContext);
-    console.log(user.email);
-    console.log(user.displayName);
+    // console.log(user.email);
+    // console.log(user.displayName);
 
     const loadedProducts = useLoaderData();
 

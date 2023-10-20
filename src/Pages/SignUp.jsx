@@ -20,7 +20,7 @@ const SignUp = () => {
         const password = form.password.value;
         const name = form.name.value;
         const photo = form.photo.value;
-        console.log(email, password, photo, name);
+        // console.log(email, password, photo, name);
 
         // Password Validation  : 
         // Check if the input has less than 6 characters
