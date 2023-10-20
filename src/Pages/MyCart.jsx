@@ -21,7 +21,12 @@ const MyCart = () => {
             <h1 className="text-2xl text-left px-5 font-bold my-10">Total Products In Your Cart : {products.length} </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 px-5">
                 {
-                    products.map( product => <CartCard key={product._id} product={product} setProducts={setProducts} products={products}></CartCard>)
+                    products.map( product => <CartCard 
+                        key={product._id} 
+                        product={product} 
+                        setProducts={setProducts} 
+                        products={products}
+                        ></CartCard>)
                 }
             </div>
         </div>

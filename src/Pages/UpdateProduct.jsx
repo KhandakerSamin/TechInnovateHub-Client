@@ -23,7 +23,7 @@ const UpdateProduct = () => {
         const updatedProduct = { name, brand, category: type, description, price,  rating, photo }
         // console.log(updatedProduct);
         
-        fetch(`https://tech-innovate-hub-server-nn8n4wz00.vercel.app/updateProduct/${_id}`, {
+        fetch(`https://tech-innovate-hub-server.vercel.app/updateProduct/${_id}`, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updatedProduct)
@@ -105,15 +105,10 @@ const UpdateProduct = () => {
                                         <select name="rating" defaultValue={rating} className="select w-full   border-none select-bordered">
                                             <option disabled selected>Select Rating Point</option>
                                             <option>5.0</option>
-                                            <option>4.5</option>
                                             <option>4.0</option>
-                                            <option>3.5</option>
                                             <option>3.0</option>
-                                            <option>2.5</option>
                                             <option>2.0</option>
-                                            <option>1.5</option>
                                             <option>1.0</option>
-                                            <option>0.5</option>
                                         </select>
                                     </div>
                                 </div>

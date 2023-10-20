@@ -4,9 +4,9 @@ import img from '../assets/Images/tech.png';
 
 const Banner = () => {
   return (
-    <div className='h-[600px] w-full relative overflow-hidden'>
+    <div className='h-[600px] w-full  relative overflow-hidden'>
       <img
-        className='h-full w-full'
+        className='h-full rounded-b-xl w-full'
         src={img}
         alt='Banner'
       />
