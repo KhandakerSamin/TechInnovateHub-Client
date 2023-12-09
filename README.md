@@ -1,6 +1,6 @@
 # TechInnovateHub Technology and Electronics Selling Website
 
-![TechInnovateHub Logo](https://i.postimg.cc/FKZvyFDC/download.jpg)
+![TechInnovateHub Logo - Small](https://i.postimg.cc/NM7fGpcY/download-small.jpg)
 
 **TechInnovateHub** is a web application for selling technology and electronics products. It is built using a variety of technologies to provide a seamless technology-related experience for both customers and administrators. Below, you'll find an overview of the main functionalities and features of the TechInnovateHub website.
 
